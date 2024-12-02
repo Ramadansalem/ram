@@ -1,0 +1,136 @@
+body {
+  font-family: "Tajawal", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  direction: rtl; /* اجعل الصفحة تبدأ من اليمين */
+}
+
+.main-header {
+  background-color: #007bff;
+  padding: 15px 0;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar {
+  text-align: left; /* لأن الاتجاه من اليمين، القائمة ستظهر على اليسار */
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffdd57;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/hero.jpg") center/cover no-repeat;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.lessons,
+.activities,
+.results,
+.contact {
+  padding: 50px 0;
+  background-color: #ffffff;
+  margin: 30px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson,
+.activity-item {
+  margin-bottom: 20px;
+}
+
+/* تنسيق جديد لحجم الحقول في قسم النتائج وقسم الاتصال */
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 600px; /* تحديد العرض الأقصى للحقول */
+  margin: 10px auto; /* توسيط الحقول */
+}
+
+input,
+textarea {
+  width: calc(100% - 20px);
+  max-width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 1em;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل بسيط لتحسين المظهر */
+}
+
+/* تحسين مظهر الأزرار */
+button {
+  display: block; /* جعل الأزرار تظهر بمفردها في السطر */
+  margin: 20px auto; /* توسيط الأزرار */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* تكبير الزر قليلاً عند التمرير */
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* تحسين مظهر قسم الاتصال والنتائج */
+.contact,
+.results {
+  text-align: center;
+}
+
+.contact form,
+.results form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  height: 120px; /* تحديد ارتفاع الحقل ليكون مناسبًا */
+  resize: vertical; /* السماح بتغيير حجم الحقل عموديًا فقط */
+}
