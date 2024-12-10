@@ -1,84 +1,184 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع تجريبي</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="main-header">
-        <div class="container">
-            <nav class="navbar">
-                <ul class="nav-menu">
-                    <li><a href="#" class="nav-link">الرئيسية</a></li>
-                    <li><a href="#" class="nav-link">الدروس</a></li>
-                    <li><a href="#" class="nav-link">الأنشطة</a></li>
-                    <li><a href="#" class="nav-link">اتصل بنا</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <h2>مرحبًا بك في موقعنا</h2>
-    </section>
-
-    <section class="lessons container">
-        <h3>الدروس</h3>
-        <div class="lesson">درس 1</div>
-        <div class="lesson">درس 2</div>
-    </section>
-
-    <section class="activities container">
-        <h3>الأنشطة</h3>
-        <div class="activity-item">نشاط 1</div>
-        <div class="activity-item">نشاط 2</div>
-    </section>
-
-    <section class="results container">
-        <h3>النتائج</h3>
-        <form>
-            <div class="form-group">
-                <input type="text" placeholder="ادخل اسمك">
-            </div>
-            <div class="form-group">
-                <button>إرسال</button>
-            </div>
-        </form>
-    </section>
-
-    <section class="contact container">
-        <h3>اتصل بنا</h3>
-        <form>
-            <div class="form-group">
-                <textarea placeholder="اكتب رسالتك هنا"></textarea>
-            </div>
-            <button>إرسال</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>تابعنا على:</p>
-        <a href="https://www.youtube.com" class="social-link">يوتيوب</a>
-        <a href="https://www.twitter.com" class="social-link">تويتر</a>
-        <a href="https://www.facebook.com" class="social-link">فيس بوك</a>
-    </footer>
-
-    <script>
-        // الحصول على جميع الروابط الاجتماعية
-        const socialLinks = document.querySelectorAll('.social-link');
-
-        // إضافة مستمع للأحداث
-        socialLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                // منع الانتقال إلى الرابط
-                event.preventDefault();
-
-                // عرض رسالة للمستخدم
-                alert("نعتذر، هذه المواقع تحت الصيانة.");
-            });
-        });
-    </script>
-</body>
-</html>
+/* إعدادات عامة */
+body {
+    font-family: "Tajawal", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    direction: rtl; /* اجعل الصفحة تبدأ من اليمين */
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* رأس الصفحة */
+  .main-header {
+    background-color: #007bff;
+    padding: 15px 0;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar {
+    text-align: left; /* القائمة تظهر على اليسار لأن الاتجاه من اليمين */
+  }
+  
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s, text-shadow 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #ffdd57;
+    text-shadow: 0 0 10px #ffdd57;
+  }
+  
+  /* قسم الترحيب */
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("images/hero.jpg") center/cover no-repeat;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* أقسام المحتوى */
+  .lessons,
+  .activities,
+  .results,
+  .contact {
+    padding: 50px 0;
+    background-color: #ffffff;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lessons h3,
+  .activities h3,
+  .results h3,
+  .contact h3 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+  }
+  
+  .lesson,
+  .activity-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .lesson:hover,
+  .activity-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* قسم النتائج وقسم الاتصال */
+  .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 600px; /* تحديد العرض الأقصى للحقول */
+    margin: 10px auto; /* توسيط الحقول */
+  }
+  
+  input,
+  textarea {
+    width: calc(100% - 20px);
+    max-width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1em;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* تحسين مظهر الأزرار */
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* الفوتر */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #ffdd57;
+  }
+  
+  /* تحسين مظهر الروابط */
+  .social-link {
+    display: inline-block;
+    margin: 5px 10px;
+    font-size: 1.1em;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .social-link:hover {
+    color: #ffdd57;
+    transform: scale(1.1);
+  }
+  
